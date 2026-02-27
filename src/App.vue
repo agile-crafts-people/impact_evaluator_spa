@@ -7,7 +7,7 @@
         data-automation-id="nav-drawer-toggle"
         aria-label="Open navigation drawer"
       />
-      <v-app-bar-title>{{service.name | capitalize}}</v-app-bar-title>
+      <v-app-bar-title>Evaluator</v-app-bar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -16,49 +16,65 @@
       temporary
     >
       <v-list density="compact" nav>
-        {% for item in service.data_domains.controls %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>TESTRUN DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/testruns"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List TestRuns"
+          data-automation-id="nav-testruns-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/testruns/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New TestRun"
+          data-automation-id="nav-testruns-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.creates %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        <v-list-subheader>TESTDATA DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/testdatas"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List TestDatas"
+          data-automation-id="nav-testdatas-list-link"
         />
         <v-list-item
-          to="/{{ item | lower }}s/new"
+          to="/testdatas/new"
           prepend-icon="mdi-plus"
-          title="New {{ item }}"
-          data-automation-id="nav-{{ item | lower }}s-new-link"
+          title="New TestData"
+          data-automation-id="nav-testdatas-new-link"
         />
 
         <v-divider class="my-2" />
-        {% endfor %}
-        {% for item in service.data_domains.consumes %}
-        <v-list-subheader>{{ item | upper }} DOMAIN</v-list-subheader>
+        
+        
+        <v-list-subheader>GRADE DOMAIN</v-list-subheader>
         <v-list-item
-          to="/{{ item | lower }}s"
+          to="/grades"
           prepend-icon="mdi-view-list"
-          title="List {{ item }}s"
-          data-automation-id="nav-{{ item | lower }}s-list-link"
+          title="List Grades"
+          data-automation-id="nav-grades-list-link"
         />
-        {% endfor %}
+        <v-list-item
+          to="/grades/new"
+          prepend-icon="mdi-plus"
+          title="New Grade"
+          data-automation-id="nav-grades-new-link"
+        />
+
+        <v-divider class="my-2" />
+        
+        
+        <v-list-subheader>PROFILE DOMAIN</v-list-subheader>
+        <v-list-item
+          to="/profiles"
+          prepend-icon="mdi-view-list"
+          title="List Profiles"
+          data-automation-id="nav-profiles-list-link"
+        />
+        
       </v-list>
 
       <template v-slot:append>
